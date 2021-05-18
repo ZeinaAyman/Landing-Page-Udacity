@@ -209,6 +209,21 @@ section.your-active-class .landing__container::after {
     animation: rotate 5s linear 0s infinite forwards reverse;
 }
 
+#scrollToTopButton {
+  display: none;
+  position: fixed;
+  bottom: 22px;
+  right: 32px;
+  width: 51px;
+  font-size: 18px;
+  z-index: 3;
+  border: none;
+  background-color: #3a5e8b;
+  color: white;
+  cursor: pointer;
+  padding: 16px;
+  border-radius: 50%;
+}
 /* Section Active Styles Keyframe Animations */
 @keyframes rotate {
 	from {

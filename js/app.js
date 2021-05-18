@@ -21,6 +21,8 @@ const sections = document.querySelectorAll('section');
 const nav = document.querySelector('#navbar__list');
 const fragment = document.createDocumentFragment();
 const color = ["#051440","#27445c","#3a5e6b","#588884"];
+//element returns the root element of the document (html).
+const element = document.documentElement;
 
 /**
  * End Global Variables
@@ -83,9 +85,28 @@ function addActive(){
   });
 }
 
-// Scroll to anchor ID using scrollTO event
+//hide navigation bar when scrolling
+function hideNavigation(){
 
 
+
+}
+
+function scrollToTop(){
+  var scrollButton = document.getElementById("scrollToTopButton");
+    window.addEventListener("scroll", function() {
+      if (element.scrollTop > 5) {
+        scrollButton.style.display = "block";
+      } else {
+        scrollButton.style.display = "none";
+      }
+    });
+
+    scrollButton.addEventListener("click", function() {
+      element.scrollTo({top: 0, behavior:"smooth"});
+    });
+
+}
 /**
  * End Main Functions
  * Begin Events
@@ -94,7 +115,8 @@ function addActive(){
 
 // Build menu
 navigationBar();
-// Scroll to section on link click
 
 // Set sections as active
 addActive();
+
+scrollToTop();
