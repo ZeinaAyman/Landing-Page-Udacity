@@ -21,7 +21,7 @@ const sections = document.querySelectorAll('section');
 const nav = document.querySelector('#navbar__list');
 const fragment = document.createDocumentFragment();
 const color = ["#051440","#27445c","#3a5e6b","#588884"];
-//element returns the root element of the document (html).
+//element returns the root element of the document (<html>).
 const element = document.documentElement;
 
 /**
@@ -85,17 +85,12 @@ function addActive(){
   });
 }
 
-//hide navigation bar when scrolling
-function hideNavigation(){
-
-
-
-}
-
+//function to scroll to the top of the document.
 function scrollToTop(){
   var scrollButton = document.getElementById("scrollToTopButton");
     window.addEventListener("scroll", function() {
-      if (element.scrollTop > 5) {
+      //when user scrolls down 40px from the document, show the button (viewed tutorial from w3schools)
+      if (element.scrollTop > 40) {
         scrollButton.style.display = "block";
       } else {
         scrollButton.style.display = "none";
@@ -119,4 +114,5 @@ navigationBar();
 // Set sections as active
 addActive();
 
+//scroll to top
 scrollToTop();
